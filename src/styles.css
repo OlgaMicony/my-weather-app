@@ -1,0 +1,28 @@
+body {
+    font-family: "Crimson Text", serif;
+    width: 500px;
+    height: 700px;
+    margin: 0 auto;
+    padding-top: 100px;
+    border-radius: 20px;
+    background-image: linear-gradient(to top, #a8edea 0%, #fed6e3 100%);
+  }
+  
+  img {
+    width: 100px;
+    display: block;
+  }
+  
+  section {
+    width: 200px;
+    display: block;
+    padding: 20px;
+    right: 0;
+  }
+  
+  div .column {
+    width: 15%;
+    margin-bottom: 20px;
+    display: block;
+  }
+  
