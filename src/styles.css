@@ -1,15 +1,14 @@
 body {
     font-family: "Crimson Text", serif;
     width: 500px;
-    height: 700px;
+    height: 600px;
     margin: 0 auto;
-    padding-top: 100px;
-    border-radius: 20px;
-    background-image: linear-gradient(to top, #a8edea 0%, #fed6e3 100%);
+    padding-top: 40px;
+    border-radius: 40px; 
   }
   
   img {
-    width: 100px;
+    width: 80px;
     display: block;
   }
   
@@ -24,5 +23,10 @@ body {
     width: 15%;
     margin-bottom: 20px;
     display: block;
+  }
+
+  .link{
+    margin: 0 auto;   
+    padding: 10px;    
   }
   
