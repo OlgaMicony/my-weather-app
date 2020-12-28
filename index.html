@@ -21,20 +21,43 @@
       <div class="card">
         <div class="card-body">
           <form class="search-form">
-            <input type="text" placeholder="Enter your city" id="input-city" />
-            <button type="button" class="btn btn-outline-primary" id="search">Search</button>
-            <button type="button" class="btn btn-outline-success" id="current">Current</button>
+            <div class="row">
+             <div class="col-6">
+            <input 
+            type="search" 
+            placeholder="Enter your city" 
+            autofocus="on"
+            autocomplete="off"
+            id="input-city"
+            class="form-control shadow sm" />
+          </div>
+            <div class="col-3">
+            <input 
+            type="sibmit"
+            value="Search"
+            class="form-control btn btn-outline-primary w-100 shadow sm"
+            id="search"
+            >
+          </div>
+            <div class="col-3">
+            <button 
+            type="button" 
+            class="btn btn-outline-success w-100 shadow sm" 
+            id="current">
+            Current
+          </button>
+          </div>
+          </div>
           </form>
           <h1 id="city">Prague</h1>
           <section>
             <div class="card">
               <div class="card-body">
                 <h2>10℃</h2>
-                <img src="images/cloud.jpg" alt="cloud" />
+                <img src="images_gif/sunny.gif" alt="cloud" />
               </div>
             </div>
           </section>
-
          
           <div class="row">
             <div class="col-6">

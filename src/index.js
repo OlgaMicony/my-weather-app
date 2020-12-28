@@ -24,7 +24,7 @@ function showWeather(response) {
     currentWeatherElement.innerHTML = `${currentWeather}`;
   }
   
-  function searchButton(event) {
+  function searchCity(event) {
     event.preventDefault();
     let city = document.querySelector("#input-city").value;
     let apiKey = "1485caf947c0e72e759dc557efc47cd5";
@@ -32,7 +32,8 @@ function showWeather(response) {
     axios.get(`${apiUrl}&appid=${apiKey}`).then(showWeather);
   }
   let search = document.querySelector("#search");
-  search.addEventListener("click", searchButton);
+  search.addEventListener("click", searchCity)
+  
   
   function currentDate() {
     let currentTime = new Date();
