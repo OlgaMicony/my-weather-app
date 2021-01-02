@@ -22,6 +22,9 @@ function showWeather(response) {
     let currentWeather = response.data.weather[0].description;
     let currentWeatherElement = document.querySelector("#current-weather");
     currentWeatherElement.innerHTML = `${currentWeather}`;
+
+    let dateElement = document.querySelector(".date");
+    dateElement.innerHTML = formatDate(response.data.dt * 1000);
   }
   
   function searchCity(event) {
@@ -35,11 +38,16 @@ function showWeather(response) {
   search.addEventListener("click", searchCity)
   
   
-  function currentDate() {
-    let currentTime = new Date();
-    let span = document.querySelector(".date");
-    let date = currentTime.getDate();
-    let year = currentTime.getFullYear();
+  function formatDate() {
+    let date = new Date(); 
+    let hour = date.getHours();
+    if(hour<10){
+      hour = `0${hour}`;
+    }
+    let minute = date.getMinutes(); 
+    if (minute < 10) {
+      minute = `0${minute}`
+    }         
     let days = [
       "Sunday",
       "Monday",
@@ -49,29 +57,11 @@ function showWeather(response) {
       "Friday",
       "Saturday"
     ];
-    let months = [
-      "January",
-      "February",
-      "March",
-      "April",
-      "May",
-      "June",
-      "July",
-      "August",
-      "September",
-      "October",
-      "November",
-      "December"
-    ];
-  
-    let month = months[currentTime.getMonth()];
-    let day = days[currentTime.getDay()];
-    let hour = currentTime.getHours();
-    let minute = currentTime.getMinutes();
-  
-    span.innerHTML = `${day}  ${date} ${month} ${year} ${hour}:${minute}`;
+    let day = days[date.getDay()];
+    
+    return `${day} ${hour}:${minute}`;
   }
-  currentDate();
+  
   
   function showCurrentPosition(event) {
     event.preventDefault();
