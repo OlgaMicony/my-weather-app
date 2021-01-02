@@ -31,15 +31,23 @@ function showWeather(response) {
     iconElement.setAttribute("alt", response.data.weather[0].description)
   }
   
-  function searchCity(event) {
-    event.preventDefault();
-    let city = document.querySelector("#input-city").value;
+  function searchCity (city){
+   
     let apiKey = "1485caf947c0e72e759dc557efc47cd5";
     let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric`;
     axios.get(`${apiUrl}&appid=${apiKey}`).then(showWeather);
   }
+
+  function handleSubmit(event) {
+    event.preventDefault();
+    let cityInputElement = document.querySelector("#city-input");
+    searchCity(cityInputElement.value)
+  }
+
+  searchCity("Prague");
+
   let search = document.querySelector("#search");
-  search.addEventListener("click", searchCity)
+  search.addEventListener("click", handleSubmit)
   
   
   function formatDate() {
