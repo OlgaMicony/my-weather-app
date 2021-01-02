@@ -1,9 +1,10 @@
-body {
+.weather-container {
     font-family: "Crimson Text", serif;
-    width: 700px;
-    height: 600px;
-    margin: 0 auto;
-    padding-top: 40px;
+    max-width: 600px;
+    margin: 30px auto;
+    padding: 20px;
+    border: 1px solid rgb(151, 74, 223);
+    border-radius: 30px;
     background-image: linear-gradient(to top, #5ee7df 0%, #b490ca 100%);
     
   }
