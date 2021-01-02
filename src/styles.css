@@ -1,10 +1,34 @@
 body{
   font-family: "Crimson Text", serif;
   background-image: linear-gradient(120deg, #fdfbfb 0%, #ebedee 100%);
+  color: #a685e2;
+}
+
+h1{  
+  padding-top: 20px;
+  margin: 0 auto;    
+  font-size: 40px;
+  font-weight: 100;
+  line-height: 28px;    
+}
+
+ul{
+  margin: 0;
+  padding: 0;
+}
+
+li{   
+  list-style: none;    
+  font-size: medium;
+  font-weight: 600;  
+  text-transform: capitalize;  
+  margin: 0;
+  padding: 0;
+  line-height: 20px; 
 }
 
 .weather-container {   
-    max-width: 500px;    
+    max-width: 500px;
     margin: 30px auto;
     padding: 20px;
     border: 1px solid rgb(151, 74, 223);
@@ -17,55 +41,36 @@ body{
     background-image: linear-gradient(120deg, #fdfbfb 0%, #ebedee 100%);      
   }
 
-h1{
-    color: #6155a6;
-    margin: 15px auto;    
-    font-size: 40px;
-    font-weight: 100;
-    line-height: 28px;    
-  }
-  
-  h2{   
-    color: #6155a6;
-    margin-left: 5px;   
-    font-size: 28px;    
-    line-height: 20px;    
-  }
-
-ul{
-    margin: 0;
-    padding: 0;
-  }
-
-  li{
-    color: #6155a6;
-    list-style: none;    
-    font-size: large;
-    font-weight: 600;    
-    margin: 0;
-    padding: 0;
-  }
-
 img {
-    width: 70px;
+    width: 50px;
     display: block;
   }
   
-#img-temp {
+.img-temp {
     display: table-cell;
     padding-top: 10px;
 }
 
-#img-temp #weather-avatar {
-    float: left;
+.img-temp strong{     
+  font-size: 64px;  
+  font-weight: 400px;  
+  line-height: 1;    
 }
 
-#weather-avatar {
-    width: 100px;
+.img-temp span{
+  position: relative;
+  font-size: 16px;
+  top: -32px;
+}
+
+.img-temp img {
+    float: left;
+    margin-right: 10px;
+    width: 80px;
     display: block;        
     padding-left: 10px;
     padding-right: 10px;
-  }
+}
   
 div .column {
     width: 15%;
@@ -78,8 +83,7 @@ div .column {
   }
 
 .week-weather-conteiner{
-    padding-top: 35px;
-    color: #6155a6;
+    padding-top: 35px;  
     
   }
 

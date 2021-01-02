@@ -4,8 +4,8 @@ function showWeather(response) {
     document.querySelector("#city").innerHTML = response.data.name;
   
     let temperature = Math.round(response.data.main.temp);
-    let temperatureElement = document.querySelector("h2");
-    temperatureElement.innerHTML = `${temperature}℃`;
+    let temperatureElement = document.querySelector(".temp");
+    temperatureElement.innerHTML = `${temperature}`;
   
     let humidity = Math.round(response.data.main.humidity);
     let humidityElement = document.querySelector("#humidity");
@@ -19,7 +19,7 @@ function showWeather(response) {
     let precipitationElement = document.querySelector("#precipitation");
     precipitationElement.innerHTML = `${precipitation} %`;
   
-    let currentWeather = response.data.weather[0].main;
+    let currentWeather = response.data.weather[0].description;
     let currentWeatherElement = document.querySelector("#current-weather");
     currentWeatherElement.innerHTML = `${currentWeather}`;
   }
