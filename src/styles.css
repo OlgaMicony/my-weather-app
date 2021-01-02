@@ -4,7 +4,7 @@ body{
 }
 
 .weather-container {   
-    max-width: 600px;
+    max-width: 500px;    
     margin: 30px auto;
     padding: 20px;
     border: 1px solid rgb(151, 74, 223);
@@ -18,11 +18,18 @@ body{
   }
 
 h1{
-
+    color: #6155a6;
     margin: 15px auto;    
     font-size: 40px;
     font-weight: 100;
     line-height: 28px;    
+  }
+  
+  h2{   
+    color: #6155a6;
+    margin-left: 5px;   
+    font-size: 28px;    
+    line-height: 20px;    
   }
 
 ul{
@@ -31,6 +38,7 @@ ul{
   }
 
   li{
+    color: #6155a6;
     list-style: none;    
     font-size: large;
     font-weight: 600;    
@@ -39,42 +47,43 @@ ul{
   }
 
 img {
-    width: 80px;
+    width: 70px;
     display: block;
   }
   
 #img-temp {
     display: table-cell;
+    padding-top: 10px;
 }
 
 #img-temp #weather-avatar {
     float: left;
 }
 
-  #weather-avatar {
+#weather-avatar {
     width: 100px;
-    display: block;
-    margin: 15 auto;
-    padding-left: 15px;
+    display: block;        
+    padding-left: 10px;
+    padding-right: 10px;
   }
   
-  div .column {
+div .column {
     width: 15%;
     margin-bottom: 20px;
     display: block;
   }
    
-  .col-2{
+.col-2{
     display: inline;
   }
 
-  .week-weather-conteiner{
+.week-weather-conteiner{
     padding-top: 35px;
-    padding-left: 15px;
-    padding-right: 15px;
+    color: #6155a6;
+    
   }
 
-  .link{
+.link{
     margin: 0 auto;   
     padding: 10px;    
   }
