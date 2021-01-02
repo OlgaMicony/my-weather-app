@@ -16,7 +16,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@1,400;1,700&display=swap" rel="stylesheet">
   </head>
   <body>
-    <!-- main conteiner -->
+    <!-- weather-container -->
     <div class="weather-container">
       <div class="card">
         <div class="card-body">
@@ -55,15 +55,12 @@
               <li id="current-weather">Cloudly</li>
             </ul>       
           <div class="row" id="display-weather">
-            <div class="col-6">
-              <div class="card">
-                <div class="card-body">
-                  <h2>10℃ |℉</h2>
-                  <img src="images_gif/sunny.gif" alt="cloud" />
-                </div>
-              </div>
+            <div class="col-6" id="img-temp">                               
+                  <img src="images_gif/sunny.gif" alt="cloud" id="weather-avatar"/>
+                  <h2> 10℃ | ℉</h2>              
             </div>
             <div class="col-6" > 
+              <ul>
               <li>             
               Precipitation: <span id="precipitation">1%</span>
             </li>
@@ -73,46 +70,46 @@
             <li>
               Wind: <span id="wind">14km/h</span>
             </li>
+          </ul>
             </div>
             </div>
-          </div>
-
-        <!-- week weather conteiner -->
-        <div class="week-weather-conteiner"> 
-          <div class="row">       
-            <div class="col-2">
-              <div>Sun</div>
-              <div> <img src="images_gif/cloudly_rain.gif" alt="cloudly"></div>
-              <div>2℃ 4℃</div>
+            <!-- week-weather-conteiner -->
+            <div class="week-weather-conteiner"> 
+              <div class="row">       
+                <div class="col-2">
+                  <div>Sun</div>
+                  <div> <img src="images_gif/cloudly_rain.gif" alt="cloudly"></div>
+                  <div>2℃ 4℃</div>
+                </div>
+                <div class="col-2">
+                  <div>Mon</div>
+                  <div><img src="images_gif/cloudy.gif" alt="cloudly"></div>
+                  <div>2℃ 4℃</div>
+                </div>
+                <div class="col-2">
+                  <div>Tue</div>
+                  <div><img src="images_gif/cloudly.gif" alt="cloudly"></div>
+                  <div>2℃ 4℃</div>
+                </div>
+                <div class="col-2">
+                  <div>Wed</div>
+                  <div><img src="images_gif/cloudly.gif" alt="cloudly"></div>
+                  <div>2℃ 4℃</div>
+                </div>
+                <div class="col-2">
+                  <div>Thu</div>
+                  <div><img src="images_gif/cloudly.gif" alt="cloudly"></div>
+                  <div>2℃ 4℃</div>
+                </div>
+                <div class="col-2">
+                  <div>Fri</div>
+                  <div><img src="images_gif/cloudly.gif" alt="cloudly"></div>
+                  <div>2℃ 4℃</div>
+                </div>
+             </div>
             </div>
-            <div class="col-2">
-              <div>Mon</div>
-              <div><img src="images_gif/cloudy.gif" alt="cloudly"></div>
-              <div>2℃ 4℃</div>
-            </div>
-            <div class="col-2">
-              <div>Tue</div>
-              <div><img src="images_gif/cloudly.gif" alt="cloudly"></div>
-              <div>2℃ 4℃</div>
-            </div>
-            <div class="col-2">
-              <div>Wed</div>
-              <div><img src="images_gif/cloudly.gif" alt="cloudly"></div>
-              <div>2℃ 4℃</div>
-            </div>
-            <div class="col-2">
-              <div>Thu</div>
-              <div><img src="images_gif/cloudly.gif" alt="cloudly"></div>
-              <div>2℃ 4℃</div>
-            </div>
-            <div class="col-2">
-              <div>Fri</div>
-              <div><img src="images_gif/cloudly.gif" alt="cloudly"></div>
-              <div>2℃ 4℃</div>
-            </div>
-         </div>
-        </div>  
-      </div>
+          </div>     
+        </div>
       <div class="link">
         <a href="https://github.com/OlgaMicony/my-weather-app" target="_blank">Open-source code </a>by Olga Micony 
       </div>
