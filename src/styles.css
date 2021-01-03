@@ -61,7 +61,7 @@ img {
 
 .img-temp strong{     
   font-size: 64px;  
-  font-weight: 400px;  
+  font-weight: 400;  
   line-height: 1;    
 }
 
@@ -80,20 +80,36 @@ img {
     padding-right: 10px;
 }
   
-div .column {
-    width: 15%;
-    margin-bottom: 20px;
-    display: block;
-  }
-   
-.col-2{
-    display: inline;
-  }
+.weather-forecast{
+  margin-top: 10px;
+}
 
-.week-weather-conteiner{
-    padding-top: 35px;  
-    
-  }
+.weather-forecast h3{
+  font-size: 14px;
+  font-weight: 400;
+  text-align: center;
+  height: 15px;
+  line-height: 15px;
+  padding-top: 7px;
+}
+
+.weather-forecast img{
+  display: block;
+  margin: 0 auto;
+  height: 48px;
+  width: 48px;  
+}
+
+.weather-forecast-temp{
+  text-align: center;
+  font-size: 14px;
+  font-weight: 400;
+  height: auto;
+  line-height: 15px;
+  white-space: nowrap;
+}
+
+
 
 .link{
     margin: 0 auto;   
