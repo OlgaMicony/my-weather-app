@@ -40,7 +40,14 @@ li::first-letter{
     
   }
   
+.display-weather .active {
+  color: #a685e2;
+  cursor: default;
+}
 
+.display-weather .active:hover {
+  text-decoration: none;
+}
 
 img {
     width: 50px;

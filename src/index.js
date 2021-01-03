@@ -3,7 +3,8 @@ function showWeather(response) {
   
     document.querySelector("#city").innerHTML = response.data.name;
   
-    let temperature = Math.round(response.data.main.temp);
+    celsiusTempersture = response.data.main.temp
+    let temperature = Math.round(celsiusTempersture);
     let temperatureElement = document.querySelector(".temp");
     temperatureElement.innerHTML = `${temperature}`;
   
@@ -44,12 +45,32 @@ function showWeather(response) {
     searchCity(cityInputElement.value)
   }
 
-  searchCity("Prague");
+  function showFahrenheitTemperature(event){
+    event.preventDefault();
+    let temperatureElement = document.querySelector(".temp");
+    let fahrenheitTemperature = (celsiusTempersture*9)/5+32;
+    temperatureElement.innerHTML = Math.round(fahrenheitTemperature);
+  }
+
+  function showCelsiusTemperature(event){
+    event.preventDefault();
+    let temperatureElement = document.querySelector(".temp");
+    temperatureElement.innerHTML = Math.round(celsiusTempersture);
+  }
+
+  let celsiusTempersture = null;
 
   let search = document.querySelector("#search");
   search.addEventListener("click", handleSubmit)
-  
-  
+    
+  let fahrenheitLink = document.querySelector("#fahrenheit-link");
+  fahrenheitLink.addEventListener("click", showFahrenheitTemperature)
+
+  let celsiusLink = document.querySelector("#celsius-link");
+  celsiusLink.addEventListener("click", showCelsiusTemperature)
+
+  searchCity("Prague");
+
   function formatDate() {
     let date = new Date(); 
     let hour = date.getHours();
@@ -94,3 +115,5 @@ function showWeather(response) {
   let current = document.querySelector("#current");
   current.addEventListener("click", showCurrentPosition);
   
+
+ 
