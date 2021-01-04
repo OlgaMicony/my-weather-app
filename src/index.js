@@ -30,7 +30,7 @@
 
 
   function showWeather(response) {
-    console.log(response);
+    
     document.querySelector("#city").innerHTML = response.data.name;
   
     celsiusTempersture = response.data.main.temp
