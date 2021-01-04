@@ -55,7 +55,7 @@
     currentWeatherElement.innerHTML = `${currentWeather}`;
 
     let dateElement = document.querySelector(".date");
-    dateElement.innerHTML = formatDate(response.data.dt * 1000);
+    dateElement.innerHTML = formatDate((response.data.dt + response.data.timezone) * 1000);
 
     let iconElement = document.querySelector("#icon");
     iconElement.setAttribute("src",`http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`);
@@ -70,10 +70,11 @@
     
     for (let index = 0; index < 6; index++) {
       forecast = response.data.list[index];
+      timezone = response.data.city.timezone;
       forecastElement.innerHTML += `
       <div class="col-2">
         <h3>
-          ${formatHours(forecast.dt*1000)}
+          ${formatHours((forecast.dt + timezone) * 1000)}
         </h3>
         <img src="http://openweathermap.org/img/wn/${forecast.weather[0].icon}@2x.png" alt="">
         <div class="weather-forecast-temp">
