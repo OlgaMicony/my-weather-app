@@ -1,6 +1,36 @@
-function showWeather(response) {
+  function formatDate(timestamp) {
+    let date = new Date(timestamp);     
+    
+    let days = [
+      "Sunday",
+      "Monday",
+      "Tuesday",
+      "Wednesday",
+      "Thursday",
+      "Friday",
+      "Saturday"
+    ];
+    let day = days[date.getDay()];
+    
+    return `${day} ${formatHours(timestamp)}`;
+  }
+
+  function formatHours(timestamp){
+    let date = new Date(timestamp); 
+    let hours = date.getHours();
+    if(hours<10){
+      hours = `0${hours}`;
+    }
+    let minutes = date.getMinutes(); 
+    if (minutes < 10) {
+      minutes = `0${minutes}`
+    }         
+    return `${hours}:${minutes}`;
+  }
+
+
+  function showWeather(response) {
     console.log(response);
-  
     document.querySelector("#city").innerHTML = response.data.name;
   
     celsiusTempersture = response.data.main.temp
@@ -32,11 +62,38 @@ function showWeather(response) {
     iconElement.setAttribute("alt", response.data.weather[0].description)
   }
   
+  
+  function showForecast(response){
+    let forecastElement = document.querySelector("#forecast");  
+    forecastElement.innerHTML = null;
+    let forecast = null;
+    
+    for (let index = 0; index < 6; index++) {
+      forecast = response.data.list[index];
+      forecastElement.innerHTML += `
+      <div class="col-2">
+        <h3>
+          ${formatHours(forecast.dt*1000)}
+        </h3>
+        <img src="http://openweathermap.org/img/wn/${forecast.weather[0].icon}@2x.png" alt="">
+        <div class="weather-forecast-temp">
+        <strong>${Math.round(forecast.main.temp_max)}°</strong> ${Math.round(forecast.main.temp_min)}°
+        </div>
+      </div>
+      `;
+    }
+  }
+
+    
+
   function searchCity (city){
    
     let apiKey = "1485caf947c0e72e759dc557efc47cd5";
     let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric`;
     axios.get(`${apiUrl}&appid=${apiKey}`).then(showWeather);
+
+    apiUrl = `https://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=${apiKey}&units=metric`;
+    axios.get(apiUrl).then(showForecast);
   }
 
   function handleSubmit(event) {
@@ -76,29 +133,6 @@ function showWeather(response) {
 
   searchCity("Prague");
 
-  function formatDate() {
-    let date = new Date(); 
-    let hour = date.getHours();
-    if(hour<10){
-      hour = `0${hour}`;
-    }
-    let minute = date.getMinutes(); 
-    if (minute < 10) {
-      minute = `0${minute}`
-    }         
-    let days = [
-      "Sunday",
-      "Monday",
-      "Tuesday",
-      "Wednesday",
-      "Thursday",
-      "Friday",
-      "Saturday"
-    ];
-    let day = days[date.getDay()];
-    
-    return `${day} ${hour}:${minute}`;
-  }
   
   
   function showCurrentPosition(event) {
@@ -120,5 +154,7 @@ function showWeather(response) {
   let current = document.querySelector("#current");
   current.addEventListener("click", showCurrentPosition);
   
+
+
 
  
