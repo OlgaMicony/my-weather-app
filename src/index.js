@@ -12,7 +12,7 @@
     ];
     let day = days[date.getDay()];
     
-    return `${day} ${formatHours(timestamp)}`;
+    return `Last update: ${day} ${formatHours(timestamp)}`;
   }
 
   function formatHours(timestamp){
