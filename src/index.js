@@ -85,7 +85,6 @@
     }
   }
 
-    
 
   function searchCity (city){
    
@@ -143,19 +142,22 @@
   
   function showPosition(position) {
     console.log(position.coords.latitude);
-    console.log(position.coords.longitude);
+    console.log(position.coords.longitude);    
   
     let apiPositionKey = "1485caf947c0e72e759dc557efc47cd5";
     let lat = position.coords.latitude;
     let lon = position.coords.longitude;
     let apiPositionUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&units=metric&appid=${apiPositionKey}`;
     axios.get(apiPositionUrl).then(showWeather);
+
+    apiPositionUrl = `https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&units=metric&appid=${apiPositionKey}`;
+    axios.get(apiPositionUrl).then(showForecast);
   }
   
   let current = document.querySelector("#current");
   current.addEventListener("click", showCurrentPosition);
   
-
+  
 
 
  
